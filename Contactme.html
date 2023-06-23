@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="sidebar sidebargo">
+
+                <nav>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Services.html">My Services</a> </li>
+                    <li><a href="Cv.html">CV</a></li>
+                    <li><a href="Blog.html">Blog</a> </li>
+                    <li><a href="Contactme.html">Contact me</a> </li>
+                </nav>
+            </div>
+            <div class="main">
+                <div class="hamberger">
+                    <img class="ham" src="ham.png" alt width="23">
+                    <img class="cross" src="cross.png" alt width="23">
+                </div>
+                <div class="contactform">
+                    <h2>Contact me for genral enequery</h2>
+                    <form onsubmit="Mail();reset();return false;">
+                        <div class="mb-3">
+                            <label for="clientemail" class="form-label">Name</label>
+                            <input type="name" class="form-control"
+                                id="name"
+                                aria-describedby="emailHelp">
+
+                        </div>
+                        <div class="mb-3">
+                            <label for="clientemail" class="form-label">Email
+                                address</label>
+                            <input type="email" class="form-control"
+                                id="clientemail"
+                                aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll never
+                                share your email and phone with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="clientphone"
+                                class="form-label">Phone</label>
+                            <input type="phone" class="form-control"
+                                id="clientphone">
+                        </div>
+                        <div class="mb-3" id="ent">
+                            <label for="clientphone"
+                                class="form-label">Enequery</label>
+                            <input type="enequery" class="form-control"
+                                id="ent1">
+                        </div>
+                        <div class="mb-3" id="form-check">
+                            <input type="checkbox" class="form-check-input"
+                                id="isclient">
+                            <label class="form-check-label" for="isclient">I
+                                want to work with you </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-sm">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+        <script src="https://smtpjs.com/v3/smtp.js">
+        </script>
+        <script>
+            function Mail(){
+                let name=document.getElementById("name").value;
+                let clientemail=document.getElementById("clientemail").value;
+                let clientphone=document.getElementById("clientphone").value;
+                let ent1=document.getElementById("ent1").value;
+                let isclient=document.getElementById("isclient").value;
+                 
+                Email.send({
+                 Host : "smtp.elasticemail.com",
+                 Username : "4nn21cs004@nieit.ac.in",
+                 Password : "1AC434063D7BD2090DBF023AB41B62485C8E",
+                 To : 'anandraj8529@gmail.com',
+                 From : "4nn21cs004@nieit.ac.in",
+                 Subject : "This is the subject",
+                 Body : "Name:"+name+"<br/> User email:"+clientemail+"<br/>Contact:"+clientphone+"<br/>Enquiry"+ent1
+                       }).then(
+                         message => alert(message)
+                                        );
+            }
+        </script>
+
+    </body>
+</html>

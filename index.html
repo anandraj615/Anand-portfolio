@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="sidebar sidebargo">
+
+                <nav>
+                    <li><a href="Home.html">Home</a></li>
+
+                    <li><a href="My Intro.html"target="_blank">My Intro</a></li>
+                    <li><a href="Services.html"target="_blank">Services</a> </li>
+                    <li><a href="Blog.html"target="_blank">Blog</a> </li>
+                    <li><a href="Contactme.html"target="_blank">Contact me</a> </li>
+                </nav>
+            </div>
+            <div class="main">
+                <div class="hamberger">
+                    <img class="ham" src="ham.png" alt width="23">
+                    <img class="cross" src="cross.png" alt width="23">
+                </div>
+                <div class="infocontainer">
+                    <div class="devinfo">
+                        <div class="hello">Hi I am</div>
+                        <div class="name">Anand</div>
+                        <div class="about">Devloper,programmer</div>
+                        <div class="moreabout">Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Temporibus dolore quas
+                            a nihil commodi incidunt quo accusamus beatae
+                            repellendus eum.</div>
+                        <div class="button">
+                            <a href="cv.txt" target="_blank"> <button
+                                    class="btn">Download
+                                    Cv</button></a>
+                            <a href="Contactme.html"> <button class="btn">Contact
+                                    me</button></a>
+                        </div>
+                    </div>
+                    <div class="devpic"><img src="ant2.png" alt>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+        <script src="https://smtpjs.com/v3/smtp.js">
+        </script>
+        <script>
+            function Mail(){
+                let name=document.getElementById("name").value;
+                let clientemail=document.getElementById("clientemail").value;
+                let clientphone=document.getElementById("clientphone").value;
+                let ent1=document.getElementById("ent1").value;
+                let isclient=document.getElementById("isclient").value;
+                 
+                Email.send({
+                 Host : "smtp.elasticemail.com",
+                 Username : "4nn21cs004@nieit.ac.in",
+                 Password : "1AC434063D7BD2090DBF023AB41B62485C8E",
+                 To : 'anandraj8529@gmail.com',
+                 From : "4nn21cs004@nieit.ac.in",
+                 Subject : "This is the subject",
+                 Body : "Name:"+name+"<br/> User email:"+clientemail+"<br/>Contact:"+clientphone+"<br/>Enquiry"+ent1
+                       }).then(
+                         message => alert(message)
+                                        );
+            }
+        </script>
+       </body>
+</html>
