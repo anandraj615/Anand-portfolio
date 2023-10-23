@@ -24,11 +24,12 @@
     list-style: none;
     padding: 33px 0;
     font-size: 23px;
+    color: black;
 }
 
 .sidebar nav li a {
     text-decoration: none;
-    color: black;
+    
 
 
 }
